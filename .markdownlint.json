@@ -1,0 +1,10 @@
+{
+  "MD013": {
+    "line_length": 100
+  },
+  "comment": "Relaxed rules",
+  "default": true,
+  "fenced-code-language": false,
+  "first-line-h1": false,
+  "no-bare-urls": false
+}

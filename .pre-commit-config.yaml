@@ -1,10 +1,113 @@
+---
 repos:
-- repo: https://github.com/psf/black
-  rev: 19.10b0
-  hooks:
-  - id: black
+  - repo: https://github.com/psf/black
+    rev: 19.10b0
+    hooks:
+      - id: black
 
-- repo: https://github.com/asottile/blacken-docs
-  rev: v1.4.0
-  hooks:
-  - id: blacken-docs
+  - repo: https://github.com/asottile/blacken-docs
+    rev: v1.6.0
+    hooks:
+      - id: blacken-docs
+
+  - repo: https://github.com/timothycrosley/isort
+    rev: 4.3.21
+    hooks:
+      - id: isort
+        additional_dependencies:
+          # allow isort to read configuration from pyproject.toml.
+          - toml
+
+  - repo: https://gitlab.com/PyCQA/flake8
+    rev: 3.7.9
+    hooks:
+      - id: flake8
+
+  - repo: https://github.com/PyCQA/pylint
+    rev: pylint-2.4.2
+    hooks:
+      - id: pylint
+        additional_dependencies:
+          # pylint uses isort, which generates warnings if it finds a
+          # pyproject.toml but toml is not installed.
+          - toml
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.1.0
+    hooks:
+      - id: pyupgrade
+        args:
+          - --py37-plus
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.20.0
+    hooks:
+      - id: yamllint
+        args:
+          - --strict
+
+  - repo: https://github.com/PyCQA/pydocstyle
+    rev: 5.0.2
+    hooks:
+      - id: pydocstyle
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    hooks:
+      - id: pretty-format-json
+        args:
+          - --autofix
+      - id: check-json
+      - id: check-toml
+      - id: check-xml
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.5.1
+    hooks:
+      - id: python-check-blanket-noqa
+
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.1.0
+    hooks:
+      - id: yesqa
+
+  - repo: https://gitlab.com/smop/pre-commit-hooks
+    rev: v1.0.0
+    hooks:
+      - id: check-poetry
+
+  - repo: https://github.com/motet-a/jinjalint
+    rev: 01e0a4d8f1ee775aee00eb9d715eff2b4cc49e4d
+    hooks:
+      - id: jinjalint
+
+  - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: dockerfilelint
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.22.0
+    hooks:
+      - id: markdownlint
+        args: [--fix, --config, .markdownlint.json]
+
+  - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: dockerfilelint
+
+# FIXME: requires `go` to be installed
+#  - repo: https://github.com/Lucas-C/pre-commit-hooks-go
+#    rev: v1.0.1
+#    hooks:
+#       - id: checkmake
+
+# FIXME: Doesn't understand Sphinx
+#  - repo: https://github.com/Lucas-C/pre-commit-hooks-markup
+#    rev: v1.0.0
+#    hooks:
+#      - id: rst-linter

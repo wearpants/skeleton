@@ -1,0 +1,35 @@
+[MASTER]
+jobs=0
+persistent=no
+
+
+[MESSAGES CONTROL]
+disable=
+    attribute-defined-outside-init,
+    bad-continuation,
+    broad-except,
+    duplicate-code,
+    fixme,
+    import-error,
+    invalid-name,
+    line-too-long,
+    method-hidden,
+    missing-docstring,
+    no-member,
+    no-name-in-module,
+    no-self-use,
+    protected-access,
+    redefined-outer-name,
+    too-few-public-methods,
+    too-many-arguments,
+    too-many-instance-attributes,
+    too-many-locals,
+    ungrouped-imports,
+    undefined-variable,  # Already caught by flake8
+    unused-argument,
+    unused-import,  # Already caught by flake8
+
+
+[REPORTS]
+reports=no
+score=no

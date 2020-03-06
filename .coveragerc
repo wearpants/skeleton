@@ -1,5 +1,19 @@
 [run]
-omit = .tox/*
+branch = True
+source =
+    SKELETON
+    tests
+omit =
+    tests/conftest.py
+    .tox/*
 
 [report]
 show_missing = True
+# Exclude AssertionError because we use it to mean "this cannot happen".
+# Exclude NotImplementedError because it's a way of indicating abstract method.
+exclude_lines =
+    AssertionError
+    NotImplementedError
+    pragma: *no *cover
+    pragma: *conditional *cover
+    \.\.\.
