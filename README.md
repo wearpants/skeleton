@@ -32,9 +32,7 @@ List all dependencies with in `pyproject.toml`. You can add a new dependency wit
 `poetry add -D` for a development-only dependency.
 
 If you change dependencies, or want to update to the newest compatible versions,
-you can run `make lock`, which will generate a new poetry lockfile (`poetry.lock`) and `requirements.txt`.
-
-After running `make lock`, run `make install` to update your development environment.
+you can run `poetry lock`, then run `make install` to update your development environment.
 
 You should *always* keep the `poetry.lock` and `requirements.txt` committed in the git repository.
 
