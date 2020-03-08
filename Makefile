@@ -14,7 +14,7 @@ help:
 install:
 	pyenv local $(python_version)
 	poetry install
-	pre-commit install
+	poetry run pre-commit install
 
 .PHONY: setup  ## Set up global tooling - only do this once per machine
 setup:
