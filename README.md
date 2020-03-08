@@ -42,7 +42,7 @@ You should *always* keep the `poetry.lock` and `requirements.txt` committed in t
 
 1. Make a [new empty Github repository](https://github.com/new/import)
 2. Clone your new repo
-3. Add a git remote: `git remote add https://github.com/wearpants/skeleton skeleton`
+3. Add a git remote: `git remote add skeleton https://github.com/wearpants/skeleton`
 4. Fetch updates: `git fetch skeleton`
 5. Merge: `git merge skeleton/master --allow-unrelated-histories`
 6. Resolve conflicts and commit.
