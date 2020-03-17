@@ -32,22 +32,19 @@ List all dependencies with in `pyproject.toml`. You can add a new dependency wit
 `poetry add -D` for a development-only dependency.
 
 If you change dependencies, or want to update to the newest compatible versions,
-you can run `make lock`, which will generate a new poetry lockfile (`poetry.lock`) and `requirements.txt`.
-
-After running `make lock`, run `make install` to update your development environment.
+you can run `poetry lock`, then run `make install` to update your development environment.
 
 You should *always* keep the `poetry.lock` and `requirements.txt` committed in the git repository.
 
 ## Starting a new project from skeleton
 
-1. Make a new Github repository by [importing](https://github.com/new/import) a skeleton.
+1. Make a [new empty Github repository](https://github.com/new/import)
 2. Clone your new repo
-3. Replace all template values: `grep -r SKELETON *`
-4. Commit.
+3. Add a git remote: `git remote add skeleton https://github.com/wearpants/skeleton`
+4. Fetch updates: `git fetch skeleton`
+5. Merge: `git merge skeleton/master --allow-unrelated-histories`
+6. Resolve conflicts and commit.
+7. Replace all template values: `grep -r SKELETON *`
+8. Commit.
 
-To sync with upstream skeleton:
-
-1. Add a git remote: `git remote add https://github.com/wearpants/skeleton skeleton`
-2. Fetch updates: `git fetch skeleton`
-3. Merge: `git merge skeleton/master --allow-unrelated-histories`
-4. Resolve conflicts and commit.
+To pull changes in the future, do steps 4-8.

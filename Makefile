@@ -14,7 +14,7 @@ help:
 install:
 	pyenv local $(python_version)
 	poetry install
-	pre-commit install
+	poetry run pre-commit install
 
 .PHONY: setup  ## Set up global tooling - only do this once per machine
 setup:
@@ -26,12 +26,6 @@ setup:
 which-python:
 	echo "Virtual environment interpreter installed at:"
 	poetry run python -c "import sys; print(sys.executable)"
-
-.PHONY: lock  ## Lock dependencies and export a requirements.txt
-lock:
-	poetry lock
-	poetry export -f requirements.txt >requirements_tmp.txt
-	mv requirements_tmp.txt requirements.txt
 
 .PHONY: pre-commit  ## Run all pre-commit hooks
 pre-commit:
