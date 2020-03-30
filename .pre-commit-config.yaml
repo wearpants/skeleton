@@ -69,11 +69,6 @@ repos:
     hooks:
       - id: python-check-blanket-noqa
 
-  - repo: https://github.com/asottile/yesqa
-    rev: v1.1.0
-    hooks:
-      - id: yesqa
-
   - repo: https://gitlab.com/smop/pre-commit-hooks
     rev: v1.0.0
     hooks:
@@ -99,6 +94,12 @@ repos:
     rev: v0.1.0
     hooks:
       - id: dockerfilelint
+
+# FIXME: doesn't understand pydocstyle ignores
+#  - repo: https://github.com/asottile/yesqa
+#    rev: v1.1.0
+#    hooks:
+#      - id: yesqa
 
 # FIXME: requires `go` to be installed
 #  - repo: https://github.com/Lucas-C/pre-commit-hooks-go
