@@ -28,6 +28,7 @@ disable=
     undefined-variable,  # Already caught by flake8
     unused-argument,
     unused-import,  # Already caught by flake8
+    no-else-return,
 
 
 [REPORTS]
